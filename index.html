@@ -3,12 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Imie Nazwisko (00000) - AI LAB B</title>
+    <title>Wojciech Podlipniak (55635) - AI LAB 2</title>
 
     <link rel="stylesheet" href="styles.css" type="text/css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
+    <main class="todo-app">
+        <header>
+            <h1>To-do list</h1>
+        </header>
 
+        <section aria-labelledby="tasks-heading">
+
+            <form role="search">
+                <label for="task-search">Search tasks:</label>
+                <input id="task-search" name="search" type="search" placeholder="Search tasks...">
+            </form>
+
+            <table class="task-list">
+                <thead>
+                    <tr>
+                        <th scope="col">Description</th>
+                        <th scope="col">Due date</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="task">
+                        <td>
+                            <input id="task-1" name="completed" type="checkbox">
+                            <label for="task-1">Finish project outline</label>
+                        </td>
+                        <td><time datetime="2026-10-24">October 24, 2026</time></td>
+                        <td><button type="button" aria-label="Delete Finish project outline">Delete</button></td>
+                    </tr>
+                    <tr class="task">
+                        <td>
+                            <input id="task-2" name="completed" type="checkbox">
+                            <label for="task-2">Pick up groceries</label>
+                        </td>
+                        <td><time datetime="2026-10-22">October 22, 2026</time></td>
+                        <td><button type="button" aria-label="Delete Pick up groceries">Delete</button></td>
+                    </tr>
+                    <tr class="task">
+                        <td>
+                            <input id="task-3" name="completed" type="checkbox">
+                            <label for="task-3">Call the dentist</label>
+                        </td>
+                        <td><time datetime="2026-10-27">October 27, 2026</time></td>
+                        <td><button type="button" aria-label="Delete Call the dentist">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="new-task" name="task" type="text" placeholder="Add new task here...">
+                        </td>
+                        <td>
+                            <label for="task-due-date">Due date</label>
+                            <input id="task-due-date" name="due-date" type="date">
+                        </td>
+                        <td>
+                            <button type="submit">Submit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
 </body>
 </html>
