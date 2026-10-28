@@ -26,7 +26,7 @@
                     <tr>
                         <th scope="col">Description</th>
                         <th scope="col">Due date</th>
-                        <th scope="col">Delete</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,10 @@
                             <label for="task-1">Finish project outline</label>
                         </td>
                         <td><time datetime="2026-10-24">October 24, 2026</time></td>
-                        <td><button type="button" aria-label="Delete Finish project outline">Delete</button></td>
+                        <td class="task-actions">
+                            <button type="button" data-action="edit" aria-label="Edit">Edit</button>
+                            <button type="button" data-action="delete" aria-label="Delete">Delete</button>
+                        </td>
                     </tr>
                     <tr class="task">
                         <td>
@@ -44,7 +47,10 @@
                             <label for="task-2">Pick up groceries</label>
                         </td>
                         <td><time datetime="2026-10-22">October 22, 2026</time></td>
-                        <td><button type="button" aria-label="Delete Pick up groceries">Delete</button></td>
+                        <td class="task-actions">
+                            <button type="button" data-action="edit" aria-label="Edit">Edit</button>
+                            <button type="button" data-action="delete" aria-label="Delete">Delete</button>
+                        </td>
                     </tr>
                     <tr class="task">
                         <td>
@@ -52,18 +58,21 @@
                             <label for="task-3">Call the dentist</label>
                         </td>
                         <td><time datetime="2026-10-27">October 27, 2026</time></td>
-                        <td><button type="button" aria-label="Delete Call the dentist">Delete</button></td>
+                        <td class="task-actions">
+                            <button type="button" data-action="edit" aria-label="Edit">Edit</button>
+                            <button type="button" data-action="delete" aria-label="Delete">Delete</button>
+                        </td>
                     </tr>
-                    <tr>
+                    <tr class="task-entry">
                         <td>
                             <input id="new-task" name="task" type="text" placeholder="Add new task here...">
                         </td>
                         <td>
                             <label for="task-due-date">Due date</label>
-                            <input id="task-due-date" name="due-date" type="date">
+                            <input id="task-due-date" name="due-date" type="date" required>
                         </td>
                         <td>
-                            <button type="submit">Submit</button>
+                            <button id="add-task" type="button">Add</button>
                         </td>
                     </tr>
                 </tbody>
