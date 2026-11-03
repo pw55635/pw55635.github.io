@@ -3,12 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Imie Nazwisko (00000) - AI LAB C</title>
+    <meta name="theme-color" content="#e6f1fc">
+    <title>Map puzzle</title>
 
-    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="https://unpkg.com/leaflet-image@0.4.0/leaflet-image.js" defer></script>
     <script src="scripts.js" defer></script>
 </head>
 <body>
+    <main class="app">
+        <header class="page-header">
+            <div>
+                <h1>Map puzzle</h1>
+                <p class="intro">Choose a place, capture the map, then put its 16 pieces back in order.</p>
+            </div>
+            <div class="notification-controls">
+                <button id="notification-button" class="button button-secondary" type="button" hidden>
+                    Enable notifications
+                </button>
+                <p id="notification-status" class="notification-status" role="status" aria-live="polite"></p>
+            </div>
+        </header>
 
+        <section class="card map-card" aria-labelledby="map-heading">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Step 1</p>
+                    <h2 id="map-heading">Explore the map</h2>
+                </div>
+                <div class="controls">
+                    <button id="location-button" class="button button-secondary" type="button">
+                        My location
+                    </button>
+                    <button id="capture-button" class="button button-primary" type="button" disabled>
+                        Save map &amp; start puzzle
+                    </button>
+                </div>
+            </div>
+            <div class="map-pair">
+                <section class="map-view" aria-labelledby="live-map-heading">
+                    <h3 id="live-map-heading">Interactive map</h3>
+                    <div id="map" role="application" aria-label="Interactive map. Use the controls to zoom and drag to explore."></div>
+                </section>
+                <section class="map-view" aria-labelledby="saved-map-heading">
+                    <h3 id="saved-map-heading">Saved map</h3>
+                    <div class="saved-map-frame">
+                        <p id="saved-map-placeholder">Your captured map will appear here.</p>
+                        <img id="saved-map-image" alt="Captured map used for the puzzle" hidden>
+                    </div>
+                </section>
+            </div>
+            <p id="map-status" class="status" role="status" aria-live="polite">Loading map tiles…</p>
+            <p id="location-status" class="status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="puzzle-section" class="puzzle-section" aria-labelledby="puzzle-heading">
+            <div class="puzzle-title">
+                <div>
+                    <p class="eyebrow">Step 2</p>
+                    <h2 id="puzzle-heading">Solve the puzzle</h2>
+                </div>
+                <p id="puzzle-status" class="status" role="status" aria-live="polite">
+                    Save a map to populate the board and puzzle pieces.
+                </p>
+            </div>
+            <div class="puzzle-layout">
+                <section class="puzzle-panel" aria-labelledby="board-heading">
+                    <h3 id="board-heading">Puzzle board</h3>
+                    <div id="puzzle-board" class="puzzle-grid puzzle-board" role="grid" aria-label="Puzzle board"></div>
+                </section>
+                <section class="puzzle-panel" aria-labelledby="pieces-heading">
+                    <h3 id="pieces-heading">Pieces <span class="subheading">(drag and drop)</span></h3>
+                    <div id="puzzle-tray" class="puzzle-grid puzzle-tray" role="grid" aria-label="Unplaced puzzle pieces"></div>
+                </section>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
