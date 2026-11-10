@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wojciech Podlipniak (55635) - AI LAB D</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <main class="app-shell">
+        <section class="weather-panel" aria-label="Pogoda">
+            <form id="weather-form" class="search-form" role="search">
+                <label for="city-search">Wyszukaj miasto:</label>
+                <div class="search-controls">
+                    <input
+                        id="city-search"
+                        name="city"
+                        type="text"
+                        placeholder="np. Warszawa"
+                        autocomplete="off"
+                        aria-label="Nazwa miasta"
+                        required
+                    >
+                    <button id="city-search-button" type="submit">Pogoda</button>
+                </div>
+            </form>
+
+            <div id="status-message" class="status-message" aria-live="polite"></div>
+
+            <section id="current-weather" class="current-weather hidden" aria-live="polite">
+                <div class="city-header">
+                    <div>
+                        <p class="eyebrow">Aktualnie</p>
+                        <h1 id="city-name">Miasto</h1>
+                    </div>
+                    <div id="weather-icon" class="weather-icon" aria-hidden="true">☀️</div>
+                </div>
+                <div class="weather-main">
+                    <div class="temperature-block">
+                        <p class="temperature" id="temperature">--°C</p>
+                        <p class="condition" id="condition">--</p>
+                    </div>
+                    <ul class="weather-details">
+                        <li><span>Odczuwalnie</span><strong id="feels-like">--</strong></li>
+                        <li><span>Wilgotność</span><strong id="humidity">--</strong></li>
+                        <li><span>Wiatr</span><strong id="wind">--</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="forecast-section" class="forecast-section hidden" aria-live="polite">
+                <h2>Prognoza na tydzień</h2>
+                <div id="forecast-list" class="forecast-list"></div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
